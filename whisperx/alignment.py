@@ -194,8 +194,7 @@ def align(
 
         # check we can align
         if len(segment["clean_char"]) == 0:
-            print(f'Failed to align segment ("{segment["text"]}"): no characters in this segment found in model dictionary, resorting to original...')
-            aligned_segments.append(aligned_seg)
+            print(f'Failed to align segment ("{segment["text"]}"): no characters in this segment found in model dictionary, removing possible hallucination...')
             continue
 
         if t1 >= MAX_DURATION:
