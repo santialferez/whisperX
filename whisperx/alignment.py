@@ -239,7 +239,7 @@ def align(
         path = backtrack(trellis, emission, tokens, blank_id)
 
         if path is None:
-            print(f'Failed to align segment ("{segment["text"]}"): backtrack failed, resorting to original...')
+            print(f'Failed to align segment ("{segment["text"]}"): backtrack failed, removing possible hallucination...')
             continue
 
         char_segments = merge_repeats(path, text_clean)
